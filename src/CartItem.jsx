@@ -26,7 +26,8 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleDecrement = (item) => {
-    const cartItem = cart.items.find((cartItem) => cartItem.name === item.name);
+    const cartItem = cart.find((cartItem) => cartItem.name === item.name);
+
     if (!cartItem || cartItem.quantity === undefined) {
       return;
     }

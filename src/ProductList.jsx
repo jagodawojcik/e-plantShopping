@@ -8,6 +8,7 @@ function ProductList({ onHomeClick }) {
   const [showCart, setShowCart] = useState(false);
   const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
   const [addedToCart, setAddedToCart] = useState({});
+  const dispatch = useDispatch();
 
   const plantsArray = [
     {
@@ -297,7 +298,7 @@ function ProductList({ onHomeClick }) {
     setAddedToCart((prevState) => ({
       // Update the local state to reflect that the product has been added
       ...prevState,
-      [product.name]: true,
+      [plant.name]: true,
     }));
   };
 
